@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jaky Blog</title>
     <link rel="stylesheet" href="./assets/css/output.css">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
 </head>
 <style>
     @keyframes show{
@@ -17,27 +18,62 @@
         }
     }
 
-    .card{
+    @keyframes up{
+        from{
+            opacity: 0; transform: translateY(30px);
+        }
+        to{
+            opacity: 1; transform: translateY(10px);
+        }
+    }
+
+    @keyframes left_10{
+        from{
+            opacity: 0; transform: perspective(400px) rotateY(0deg) translateY(-10px) translateX(-100px); margin: 0 20px;
+        }
+        to{
+            opacity: 1; transform: perspective(400px) rotateY(30deg) translateY(-10px) translateX(0px); margin: 0 0px;
+        }
+    }
+
+    @keyframes left{
+        from{
+            opacity: 0; transform: perspective(400px) rotateY(0deg) translateX(-100px); margin: 0 20px;
+        }
+        to{
+            opacity: 1; transform: perspective(400px) rotateY(30deg) translateX(0px); margin: 0 0px;
+        }
+    }
+
+    @keyframes right{
+        from{
+            opacity: 0; transform: perspective(400px) rotateY(0deg) translateX(100px); margin: 0 20px;
+        }
+        to{
+            opacity: 1; transform: perspective(400px) rotateY(-30deg) translateX(0px); margin: 0 0px;
+        }
+    }
+
+    @keyframes right_10{
+        from{
+            opacity: 0; transform: perspective(400px) rotateY(0deg) translateY(-10px) translateX(100px); margin: 0 20px;
+        }
+        to{
+            opacity: 1; transform: perspective(400px) rotateY(-30deg) translateY(-10px) translateX(0px); margin: 0 0px;
+        }
+    }
+
+    /*.card{
         view-timeline-name: --reveal;
         animation-name: show;
         animation-fill-mode: both;
 
         animation-timeline: --reveal;
         animation-range: entry 10% cover 50%;
-    }
+    }*/
     
-    .semi-circulo {
-        width: 20px;
-        height: 20px;
-        background-color: #abcdef;
-        border-radius: 0;
-        clip-path: circle(50% at 50% 100%);
-    }
-
-    #cards {
-        width: 100%;
+    .patron {
         background-color: aquamarine;
-        padding: 20px;
         background-image: radial-gradient(circle at bottom center, aquamarine 1.5vw, white 1.5vw);
         background-repeat: repeat-x;
         background-size: 3vw 1.5vw;
@@ -49,51 +85,121 @@
 
         img{
             border-radius: 10px;
-            box-shadow: 0px 0px 3px grey;
+            transition: all .3s ease-in-out;
         }
 
         img:nth-child(1){
             transform: perspective(400px) rotateY(30deg);
-            height: 250px;
+            height: 20vw;
+            min-height: 50px;
+            filter: brightness(70%);
+            box-shadow: -5px 5px 10px rgba(128, 128, 128, 0.589);
+            position: relative;
+            animation: left 1s ease-in-out;
+            &:hover{
+                z-index: 999;
+                position: relative;
+                scale: 1.1;
+                transform: perspective(400px) rotateY(0deg);
+                margin: 0 50px;
+                filter: brightness(100%);
+            }
         }
+
         img:nth-child(2){
             transform: perspective(400px) rotateY(30deg) translateY(-10px);
-            height: 280px;
+            height: 20vw;
+            min-height: 80px;
+            filter: brightness(90%);
+            box-shadow: -5px 5px 10px rgba(128, 128, 128, 0.589);
+            position: relative;
+            animation: left_10 1s ease-in-out;
+            &:hover{
+                z-index: 999;
+                position: relative;
+                scale: 1.1;
+                transform: perspective(400px) rotateY(0deg);
+                margin: 0 50px;
+                filter: brightness(100%);
+            }
         }
         img:nth-child(3){
             transform: perspective(400px) rotateY(00deg) translateY(10px);
-            height: 320px;
+            height: 25vw;
+            min-height: 130px;
+            box-shadow: 0px 5px 10px rgba(128, 128, 128, 0.589);
+            position: relative;
+            animation: up 1s ease-in-out;
+            &:hover{
+                z-index: 999;
+                position: relative;
+                scale: 1.1;
+                transform: perspective(400px) rotateY(0deg);
+                margin: 0 50px;
+                filter: brightness(100%);
+            }
         }
         img:nth-child(4){
             transform: perspective(400px) rotateY(-30deg) translateY(-10px);
-            height: 280px;
+            height: 20vw;
+            min-height: 80px;
+            filter: brightness(90%);
+            box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.589);
+            position: relative;
+            animation: right_10 1s ease-in-out;
+            &:hover{
+                z-index: 999;
+                position: relative;
+                scale: 1.1;
+                transform: perspective(400px) rotateY(0deg);
+                margin: 0 50px;
+                filter: brightness(100%);
+            }
         }
         img:nth-child(5){
             transform: perspective(400px) rotateY(-30deg);
-            height: 250px;
+            height: 20vw;
+            min-height: 50px;
+            filter: brightness(70%);
+            box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.589);
+            position: relative;
+            animation: right 1s ease-in-out;
+            &:hover{
+                z-index: 999;
+                position: relative;
+                scale: 1.1;
+                transform: perspective(400px) rotateY(0deg);
+                margin: 0 50px;
+                filter: brightness(100%);
+            }
         }
     }
 
 </style>
 <body class="m-0">
-    <header class="px-20 mb-10">
-        <nav>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+    <header class="mb-10 w-full">
+        <nav class="flex items-center w-full px-5 md:px-20 py-5">
+            <div class="flex justify-between items-center">
+                <img class="w-[50px] h-[auto]" src="./assets/img/logo.png" alt="">
+                <h1 class="text-normal md:text-2xl">Jaky Blog</h1> 
+            </div>
+            
+            <ul class="hidden md:flex md:justify-around">
+                <li>Sobre mi</li>
+                <li>Mis flores</li>
+                <li>Contacto</li>
             </ul>
         </nav>
-        <section class="flex justify-center my-10">
-            <div class="carrousel">
+        <section class="flex justify-center my-10 w-[100vw]">
+            <div class="carrousel md:py-20">
                 <img src="./assets/img/canna.jpeg" alt="">
-                <img src="./assets/img/coreopsis.jpeg" alt="">
-                <img src="./assets/img/flor (10).jpeg" alt="">
-                <img src="./assets/img/flor (11).jpeg" alt="">
-                <img src="./assets/img/flor (15).jpeg" alt="">
+                <img src="./assets/img/plumeria rosa caribeña.jpeg" alt="">
+                <img class="img_centro" src="./assets/img/tulipán bicolor.jpeg" alt="">
+                <img src="./assets/img/zinnia elegans.jpeg" alt="">
+                <img src="./assets/img/orquídea cattleya.jpeg" alt="">
             </div>
         </section>
-        <section class="flex mb-5">
+        <section class="flex px-28 py-14 patron">
             <img class="rounded-full max-w-[150px] p-2 border-blue-400 border-4" src="./assets/img/perfil.jpeg" alt="">
             <div>
                 <h1 class="text-3xl font-bold">Desireth Paola Diaz</h1>
@@ -103,7 +209,7 @@
         </section>
     </header>
     <main>
-        <section id="cards" class="px-50 py-20 grid grid-cols-2 md:gap-5 justify-center md:grid-cols-3">
+        <section class="section_card grid grid-cols-2 md:gap-5 md:grid-cols-3 justify-center px-28 py-14">
         </section>
     </main>
 </body>
@@ -112,83 +218,94 @@
     const data = [
         {
             "nombre": "Coreopsis",
-            "descripcion": "Tal destellos de sol amarillo sobre tallos esbeltos, para mí lucen como pequeñas estrellas terrestres."
+            "descripcion": "Tal destellos de sol amarillo sobre tallos esbeltos, para mí lucen como pequeñas estrellas terrestres.",
+            "img": "./assets/img/coreopsis.jpeg"
         },
         {
             "nombre": "Zinnia Elegans",
-            "descripcion": "La Zinnia es la explosión propia de colores radiantes, es como un círculo vibrante de pétalos que siempre me atrae."
+            "descripcion": "La Zinnia es la explosión propia de colores radiantes, es como un círculo vibrante de pétalos que siempre me atrae.",
+            "img": "./assets/img/zinnia elegans.jpeg"
         },
         {
             "nombre": "Canna",
-            "descripcion": "Un amarillo floral salpicado de naranja, una exhuberancia de la naturaleza en su máxima expresión."
+            "descripcion": "Un amarillo floral salpicado de naranja, una exhuberancia de la naturaleza en su máxima expresión.",
+            "img": "./assets/img/canna.jpeg"
         },
         {
             "nombre": "Hibiscus",
-            "descripcion": "La cayena es importante para mí porque la conocí a través de la amistad, su belleza me recuerda los lazos fuertes que florecen en nuestras vidas."
+            "descripcion": "La cayena es importante para mí porque la conocí a través de la amistad, su belleza me recuerda los lazos fuertes que florecen en nuestras vidas.",
+            "img": "./assets/img/hibiscus.jpeg"
         },
         {
             "nombre": "Calotropis Procera (Algodoncillo)",
-            "descripcion": "Sus particulares flores me transportan directamente a mí infancia. El algodoncillo para mí es la memoria viva de mis primeros años en medio de la naturaleza."
+            "descripcion": "Sus particulares flores me transportan directamente a mí infancia. El algodoncillo para mí es la memoria viva de mis primeros años en medio de la naturaleza.",
+            "img": "./assets/img/calotropis procera.jpeg"
         },
         {
             "nombre": "Hibiscus doble",
-            "descripcion": "Cuando la ví pensé en un torbellino de pétalos naranjas, una belleza inesperada que captó mi atención al instante."
+            "descripcion": "Cuando la ví pensé en un torbellino de pétalos naranjas, una belleza inesperada que captó mi atención al instante.",
+            "img": "./assets/img/hibiscus doble.jpeg"
         },
         {
             "nombre": "Buganvillas rojas",
-            "descripcion": "Es prácticamente un clásico que adorna los paisajes de esta tierra. A pesar de verla muy a menudo, nunca deja de encantarme."
+            "descripcion": "Es prácticamente un clásico que adorna los paisajes de esta tierra. A pesar de verla muy a menudo, nunca deja de encantarme.",
+            "img": "./assets/img/buganvillas rojas.jpeg"
         },
         {
             "nombre": "Buganvilla Fucsia",
-            "descripcion": "Un estallido de color vibrante, es la alegría desbordada hecha en pétalos."
+            "descripcion": "Un estallido de color vibrante, es la alegría desbordada hecha en pétalos.",
+            "img": "./assets/img/buganvilla fucsia.jpeg"
         },
         {
             "nombre": "Hibiscus",
-            "descripcion": "Está foto fue un regalo visual de un amigo que comparte mi pasión por las flores."
-        },
-        {
-            "descripcion": "Una explosión de colores y abundancia que me dejó sin aliento. Sigo pensando en que las flores son una disculpa perfecta del universo por cualquier aspereza."
+            "descripcion": "Está foto fue un regalo visual de un amigo que comparte mi pasión por las flores.",
+            "img": "./assets/img/hibiscus.jpeg"
         },
         {
             "nombre": "Zinnia roja",
-            "descripcion": "Un regalo de color carmesí que florece en la naturaleza. Está foto de una Zinnia, para mí es como un detalle único compartido por la amistad."
+            "descripcion": "Un regalo de color carmesí que florece en la naturaleza. Está foto de una Zinnia, para mí es como un detalle único compartido por la amistad.",
+            "img": "./assets/img/zinnia roja.jpeg"
         },
         {
             "nombre": "Sphagneticola Trilobata (Bella Elena)",
-            "descripcion": "Luce como un pequeño sol amarillo emergiendo del verde intenso de las hojas. Una delicadeza en su máxima expresión, una belleza discreta pero encantadora."
+            "descripcion": "Luce como un pequeño sol amarillo emergiendo del verde intenso de las hojas. Una delicadeza en su máxima expresión, una belleza discreta pero encantadora.",
+            "img": "./assets/img/sphagneticola trilobata.jpeg"
         },
         {
             "nombre": "Ixora amarilla radiante",
-            "descripcion": "Son un conjunto de estrellitas amarillas irradiando alegría y vitalidad. Las ixoras son la definición de lo lindo en el mundo floral."
+            "descripcion": "Son un conjunto de estrellitas amarillas irradiando alegría y vitalidad. Las ixoras son la definición de lo lindo en el mundo floral.",
+            "img": "./assets/img/ixora amarilla radiante.jpeg"
         },
         {
             "nombre": "Plumeria blanca",
-            "descripcion": "Siempre las robo con amor, su blanco inmaculado y su corazón amarillo son irresistibles."
+            "descripcion": "Siempre las robo con amor, su blanco inmaculado y su corazón amarillo son irresistibles.",
+            "img": "./assets/img/plumeria blanca.jpeg"
         },
         {
             "nombre": "Orquídea Cattleya",
-            "descripcion": "Una joya exótica que adorna y le da un toque sofisticado a la naturaleza, es un tesoro que me maravilló encontrar."
+            "descripcion": "Una joya exótica que adorna y le da un toque sofisticado a la naturaleza, es un tesoro que me maravilló encontrar.",
+            "img": "./assets/img/orquídea cattleya.jpeg"
         },
         {
             "nombre": "Plumeria rosa caribeña",
-            "descripcion": "Un rosa suave que evoca calidez, está plumeria rosa es un pequeñito pedazo de paraíso que siempre me alegro de ver en los jardines."
+            "descripcion": "Un rosa suave que evoca calidez, está plumeria rosa es un pequeñito pedazo de paraíso que siempre me alegro de ver en los jardines.",
+            "img": "./assets/img/plumeria rosa caribeña.jpeg"
         },
         {
             "nombre": "Tulipán Bicolor: anhelo de primavera",
-            "descripcion": "Tal como un capullo elegante con rubor rosado en los bordes, una promesa de belleza que aún no he tenido el placer de ver en persona. El tulipán siempre será la flor que viva en mi imaginación y en los anhelos de mis futuro jardines."
+            "descripcion": "Tal como un capullo elegante con rubor rosado en los bordes, una promesa de belleza que aún no he tenido el placer de ver en persona. El tulipán siempre será la flor que viva en mi imaginación y en los anhelos de mis futuro jardines.",
+            "img": "./assets/img/tulipán bicolor.jpeg"
         }
-    ]
+    ];
 
-    console.log(data);
-
-    const $ = element => document.getElementById(element);
+    const $ = element => document.querySelector(element);
 
     for (let i = 1; i <= 16; i++) {
-        $('cards').innerHTML += `
+        $('.section_card').innerHTML += `
             <article class="card max-w-2xl">
-                <img class="rounded-2xl mb-2" src="./assets/img/flor (${i}).jpeg" alt="">
-                <h3 class="mb-2 font-bold text-2xl">Zinnia Elegans</h3>
-                <p class="text-normal">La Zinnia es la explosión propia de colores radiantes, es como un círculo vibrante de pétalos que siempre me atrae.</p>
+                <img class="rounded-2xl mb-2" src="${data[i]["img"]}" alt="">
+                <h3 class="mb-2 font-bold text-2xl">${data[i]["nombre"]}</h3>
+                <p class="text-normal">${data[i]["descripcion"]}</p>
             </article>
         `;
     }
