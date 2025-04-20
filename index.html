@@ -89,6 +89,10 @@
             background-position: top;
         }
     }
+    
+    .section_card{
+        background: linear-gradient(to bottom, aquamarine 0px, #ffffff 100px, #ffffff 100%);
+    }
 
     .carrousel{
         display: flex;
@@ -284,7 +288,7 @@
 
 </style>
 <body class="m-0">
-    <header class="mb-10 w-full">
+    <header class="w-full">
         <nav class="md:flex items-center w-100 md:px-20 py-5">
             <div class="flex justify-between items-center">
                 <img class="w-[50px] h-[50px]" src="./assets/img/logo.png" alt="">
@@ -409,8 +413,8 @@
 
     for (let i = 1; i <= 16; i++) {
         $('.section_card').innerHTML += `
-            <article class="card max-w-2xl flex md:block">
-                <img class="rounded-2xl mb-2" src="${data[i]["img"]}" alt="">
+            <article class="card md:max-w-2xl block">
+                <img class="rounded-2xl mb-2 max-h-[100px] md:h-auto" src="${data[i]["img"]}" alt="">
                 <div>
                     <h3 class="mb-2 font-bold text-2xl">${data[i]["nombre"]}</h3>
                     <p class="text-normal">${data[i]["descripcion"]}</p>
