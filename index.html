@@ -275,9 +275,9 @@
 </style>
 <body class="m-0">
     <header class="mb-10 w-full">
-        <nav class="flex items-center w-100 px-20 py-5">
+        <nav class="flex items-center w-100 md:px-20 py-5">
             <div class="flex justify-between items-center">
-                <img class="w-[20px] h-[20px] md:w-[50px] md:h-[50px]" src="./assets/img/logo.png" alt="">
+                <img class="w-[50px] h-[50px]" src="./assets/img/logo.png" alt="">
                 <h1 class="text-normal md:text-2xl">Jaky Blog</h1> 
             </div>
             
@@ -401,8 +401,10 @@
         $('.section_card').innerHTML += `
             <article class="card max-w-2xl">
                 <img class="rounded-2xl mb-2" src="${data[i]["img"]}" alt="">
-                <h3 class="mb-2 font-bold text-2xl">${data[i]["nombre"]}</h3>
-                <p class="text-normal">${data[i]["descripcion"]}</p>
+                <div class="flex md:block">
+                    <h3 class="mb-2 font-bold text-2xl">${data[i]["nombre"]}</h3>
+                    <p class="text-normal">${data[i]["descripcion"]}</p>
+                </div>
             </article>
         `;
     }
