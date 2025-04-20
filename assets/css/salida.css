@@ -201,6 +201,9 @@
   .h-\[20px\] {
     height: 20px;
   }
+  .h-\[30px\] {
+    height: 30px;
+  }
   .h-\[50px\] {
     height: 50px;
   }
@@ -215,6 +218,9 @@
   }
   .w-\[20px\] {
     width: 20px;
+  }
+  .w-\[30px\] {
+    width: 30px;
   }
   .w-\[50px\] {
     width: 50px;
@@ -337,9 +343,19 @@
       height: 50px;
     }
   }
+  .md\:h-\[150px\] {
+    @media (width >= 48rem) {
+      height: 150px;
+    }
+  }
   .md\:w-\[50px\] {
     @media (width >= 48rem) {
       width: 50px;
+    }
+  }
+  .md\:w-\[150px\] {
+    @media (width >= 48rem) {
+      width: 150px;
     }
   }
   .md\:grid-cols-3 {
