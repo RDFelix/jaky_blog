@@ -289,16 +289,16 @@
 </style>
 <body class="m-0">
     <header class="w-full">
-        <nav class="md:flex items-center w-100 md:px-20 py-5">
-            <div class="flex justify-between items-center">
+        <nav class="md:flex items-center w-100 md:px-20 p-5">
+            <div class="flex items-center">
                 <img class="w-[50px] h-[50px]" src="./assets/img/logo.png" alt="">
                 <h1 class="text-lg md:text-2xl font-bold">Jaky Blog</h1> 
             </div>
             
             <ul class="flex justify-around">
-                <li>Sobre mi</li>
-                <li>Mis flores</li>
-                <li>Contacto</li>
+                <li><a class="underline hover:text-blue-500" href="">Sobre mi</a></li>
+                <li><a class="underline hover:text-blue-500" href="">Mis flores</a></li>
+                <li><a class="underline hover:text-blue-500" href="">Contacto</a></li>
             </ul>
         </nav>
         <section class="flex justify-center my-10">
@@ -320,7 +320,7 @@
         </section>
     </header>
     <main>
-        <section class="section_card grid grid-cols-1 gap-3 md:gap-5 md:grid-cols-3 justify-center px-5 md:px-28 py-14">
+        <section class="section_card grid grid-cols-1 gap-3 md:gap-5 md:grid-cols-3 justify-items-center px-5 md:px-28 py-14">
         </section>
     </main>
 </body>
@@ -413,8 +413,8 @@
 
     for (let i = 1; i <= 16; i++) {
         $('.section_card').innerHTML += `
-            <article class="card md:max-w-2xl block">
-                <img class="rounded-2xl mb-2 max-h-[100px] md:h-auto" src="${data[i]["img"]}" alt="">
+            <article class="card max-w-2xl">
+                <img class="rounded-2xl mb-2" src="${data[i]["img"]}" alt="">
                 <div>
                     <h3 class="mb-2 font-bold text-2xl">${data[i]["nombre"]}</h3>
                     <p class="text-normal">${data[i]["descripcion"]}</p>
