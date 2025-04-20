@@ -88,10 +88,14 @@
             transition: all .3s ease-in-out;
         }
 
+        img:nth-child(1):hover img:nth-child(3){
+            transform: perspective(400px) rotateY(30deg);
+            scale: 1.5;
+        }
+
         img:nth-child(1){
             transform: perspective(400px) rotateY(30deg);
-            height: 20vw;
-            min-height: 50px;
+            height: 250px;
             filter: brightness(70%);
             box-shadow: -5px 5px 10px rgba(128, 128, 128, 0.589);
             position: relative;
@@ -108,8 +112,7 @@
 
         img:nth-child(2){
             transform: perspective(400px) rotateY(30deg) translateY(-10px);
-            height: 20vw;
-            min-height: 80px;
+            height: 280px;
             filter: brightness(90%);
             box-shadow: -5px 5px 10px rgba(128, 128, 128, 0.589);
             position: relative;
@@ -125,8 +128,7 @@
         }
         img:nth-child(3){
             transform: perspective(400px) rotateY(00deg) translateY(10px);
-            height: 25vw;
-            min-height: 130px;
+            height: 370px;
             box-shadow: 0px 5px 10px rgba(128, 128, 128, 0.589);
             position: relative;
             animation: up 1s ease-in-out;
@@ -141,8 +143,7 @@
         }
         img:nth-child(4){
             transform: perspective(400px) rotateY(-30deg) translateY(-10px);
-            height: 20vw;
-            min-height: 80px;
+            height: 280px;
             filter: brightness(90%);
             box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.589);
             position: relative;
@@ -158,8 +159,7 @@
         }
         img:nth-child(5){
             transform: perspective(400px) rotateY(-30deg);
-            height: 20vw;
-            min-height: 50px;
+            height: 250px;
             filter: brightness(70%);
             box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.589);
             position: relative;
@@ -175,12 +175,109 @@
         }
     }
 
+    @media only screen and (max-width: 600px) {
+        .carrousel{
+        display: flex;
+
+        img{
+            border-radius: 10px;
+            transition: all .3s ease-in-out;
+        }
+
+        img:nth-child(1):hover img:nth-child(3){
+            transform: perspective(400px) rotateY(30deg);
+            scale: 1.5;
+        }
+
+        img:nth-child(1){
+            transform: perspective(400px) rotateY(30deg);
+            height: 50px;
+            filter: brightness(70%);
+            box-shadow: -5px 5px 10px rgba(128, 128, 128, 0.589);
+            position: relative;
+            animation: left 1s ease-in-out;
+            &:hover{
+                z-index: 999;
+                position: relative;
+                scale: 1.1;
+                transform: perspective(400px) rotateY(0deg);
+                margin: 0 50px;
+                filter: brightness(100%);
+            }
+        }
+
+        img:nth-child(2){
+            transform: perspective(400px) rotateY(30deg) translateY(-10px);
+            height: 80px;
+            filter: brightness(90%);
+            box-shadow: -5px 5px 10px rgba(128, 128, 128, 0.589);
+            position: relative;
+            animation: left_10 1s ease-in-out;
+            &:hover{
+                z-index: 999;
+                position: relative;
+                scale: 1.1;
+                transform: perspective(400px) rotateY(0deg);
+                margin: 0 50px;
+                filter: brightness(100%);
+            }
+        }
+        img:nth-child(3){
+            transform: perspective(400px) rotateY(00deg) translateY(10px);
+            height: 120px;
+            box-shadow: 0px 5px 10px rgba(128, 128, 128, 0.589);
+            position: relative;
+            animation: up 1s ease-in-out;
+            &:hover{
+                z-index: 999;
+                position: relative;
+                scale: 1.1;
+                transform: perspective(400px) rotateY(0deg);
+                margin: 0 50px;
+                filter: brightness(100%);
+            }
+        }
+        img:nth-child(4){
+            transform: perspective(400px) rotateY(-30deg) translateY(-10px);
+            height: 80px;
+            filter: brightness(90%);
+            box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.589);
+            position: relative;
+            animation: right_10 1s ease-in-out;
+            &:hover{
+                z-index: 999;
+                position: relative;
+                scale: 1.1;
+                transform: perspective(400px) rotateY(0deg);
+                margin: 0 50px;
+                filter: brightness(100%);
+            }
+        }
+        img:nth-child(5){
+            transform: perspective(400px) rotateY(-30deg);
+            height: 50px;
+            filter: brightness(70%);
+            box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.589);
+            position: relative;
+            animation: right 1s ease-in-out;
+            &:hover{
+                z-index: 999;
+                position: relative;
+                scale: 1.1;
+                transform: perspective(400px) rotateY(0deg);
+                margin: 0 50px;
+                filter: brightness(100%);
+            }
+        }
+    }
+    }  
+
 </style>
 <body class="m-0">
-    <header class="mb-10 w-full">
-        <nav class="flex items-center w-full px-5 md:px-20 py-5">
+    <header class="mb-10 w-100">
+        <nav class="flex items-center w-100 px-20 py-5">
             <div class="flex justify-between items-center">
-                <img class="w-[50px] h-[auto]" src="./assets/img/logo.png" alt="">
+                <img class="w-[20px] h-[20px] md:w-[50px] md:h-[50px]" src="./assets/img/logo.png" alt="">
                 <h1 class="text-normal md:text-2xl">Jaky Blog</h1> 
             </div>
             
@@ -190,8 +287,8 @@
                 <li>Contacto</li>
             </ul>
         </nav>
-        <section class="flex justify-center my-10 w-[100vw]">
-            <div class="carrousel md:py-20">
+        <section class="flex justify-center my-10">
+            <div class="carrousel">
                 <img src="./assets/img/canna.jpeg" alt="">
                 <img src="./assets/img/plumeria rosa caribeña.jpeg" alt="">
                 <img class="img_centro" src="./assets/img/tulipán bicolor.jpeg" alt="">
