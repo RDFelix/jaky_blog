@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+<style>
+    @keyframes show{
+        from{
+            opacity: 0; scale: 10%;
+        }
+        to{
+            opacity: 1; scale: 100%;
+        }
+    }
+
+    .card{
+        view-timeline-name: --reveal;
+        animation-name: show;
+        animation-fill-mode: both;
+
+        animation-timeline: --reveal;
+        animation-range: entry 10% cover 50%;
+    }
+    
+    .semi-circulo {
+        width: 20px;
+        height: 20px;
+        background-color: #abcdef;
+        border-radius: 0;
+        clip-path: circle(50% at 50% 100%);
+    }
+
+    #cards {
+        width: 100%;
+        background-color: aquamarine;
+        padding: 20px;
+        background-image: radial-gradient(circle at bottom center, aquamarine 1.5vw, white 1.5vw);
+        background-repeat: repeat-x;
+        background-size: 3vw 1.5vw;
+        background-position: top;
+    }
+
+    .carrousel{
+        display: flex;
+
+        img{
+            border-radius: 10px;
+            box-shadow: 0px 0px 3px grey;
+        }
+
+        img:nth-child(1){
+            transform: perspective(400px) rotateY(30deg);
+            height: 250px;
+        }
+        img:nth-child(2){
+            transform: perspective(400px) rotateY(30deg) translateY(-10px);
+            height: 280px;
+        }
+        img:nth-child(3){
+            transform: perspective(400px) rotateY(00deg) translateY(10px);
+            height: 320px;
+        }
+        img:nth-child(4){
+            transform: perspective(400px) rotateY(-30deg) translateY(-10px);
+            height: 280px;
+        }
+        img:nth-child(5){
+            transform: perspective(400px) rotateY(-30deg);
+            height: 250px;
+        }
+    }
+
+</style>
+<body class="m-0">
+    <header class="px-20 mb-10">
+        <nav>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </nav>
+        <section class="flex justify-center my-10">
+            <div class="carrousel">
+                <img src="./assets/img/canna.jpeg" alt="">
+                <img src="./assets/img/coreopsis.jpeg" alt="">
+                <img src="./assets/img/flor (10).jpeg" alt="">
+                <img src="./assets/img/flor (11).jpeg" alt="">
+                <img src="./assets/img/flor (15).jpeg" alt="">
+            </div>
+        </section>
+        <section class="flex mb-5">
+            <img class="rounded-full max-w-[150px] p-2 border-blue-400 border-4" src="./assets/img/perfil.jpeg" alt="">
+            <div>
+                <h1 class="text-3xl font-bold">Desireth Paola Diaz</h1>
+                <h4 class="text-violet-500"><span class="font-bold">Nombre artistico:</span>Jaky</h4>
+                <p class="text-lg">Holaa soy desireth pero me puedes llamar <span class="font-bold">Jaky</span>, este es mi jardin y en el encontraras muchas flores hermosas y sus nombres.</p>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section id="cards" class="px-50 py-20 grid grid-cols-2 md:gap-5 justify-center md:grid-cols-3">
+        </section>
+    </main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+<script>
+    const data = [
+        {
+            "nombre": "Coreopsis",
+            "descripcion": "Tal destellos de sol amarillo sobre tallos esbeltos, para mí lucen como pequeñas estrellas terrestres."
+        },
+        {
+            "nombre": "Zinnia Elegans",
+            "descripcion": "La Zinnia es la explosión propia de colores radiantes, es como un círculo vibrante de pétalos que siempre me atrae."
+        },
+        {
+            "nombre": "Canna",
+            "descripcion": "Un amarillo floral salpicado de naranja, una exhuberancia de la naturaleza en su máxima expresión."
+        },
+        {
+            "nombre": "Hibiscus",
+            "descripcion": "La cayena es importante para mí porque la conocí a través de la amistad, su belleza me recuerda los lazos fuertes que florecen en nuestras vidas."
+        },
+        {
+            "nombre": "Calotropis Procera (Algodoncillo)",
+            "descripcion": "Sus particulares flores me transportan directamente a mí infancia. El algodoncillo para mí es la memoria viva de mis primeros años en medio de la naturaleza."
+        },
+        {
+            "nombre": "Hibiscus doble",
+            "descripcion": "Cuando la ví pensé en un torbellino de pétalos naranjas, una belleza inesperada que captó mi atención al instante."
+        },
+        {
+            "nombre": "Buganvillas rojas",
+            "descripcion": "Es prácticamente un clásico que adorna los paisajes de esta tierra. A pesar de verla muy a menudo, nunca deja de encantarme."
+        },
+        {
+            "nombre": "Buganvilla Fucsia",
+            "descripcion": "Un estallido de color vibrante, es la alegría desbordada hecha en pétalos."
+        },
+        {
+            "nombre": "Hibiscus",
+            "descripcion": "Está foto fue un regalo visual de un amigo que comparte mi pasión por las flores."
+        },
+        {
+            "descripcion": "Una explosión de colores y abundancia que me dejó sin aliento. Sigo pensando en que las flores son una disculpa perfecta del universo por cualquier aspereza."
+        },
+        {
+            "nombre": "Zinnia roja",
+            "descripcion": "Un regalo de color carmesí que florece en la naturaleza. Está foto de una Zinnia, para mí es como un detalle único compartido por la amistad."
+        },
+        {
+            "nombre": "Sphagneticola Trilobata (Bella Elena)",
+            "descripcion": "Luce como un pequeño sol amarillo emergiendo del verde intenso de las hojas. Una delicadeza en su máxima expresión, una belleza discreta pero encantadora."
+        },
+        {
+            "nombre": "Ixora amarilla radiante",
+            "descripcion": "Son un conjunto de estrellitas amarillas irradiando alegría y vitalidad. Las ixoras son la definición de lo lindo en el mundo floral."
+        },
+        {
+            "nombre": "Plumeria blanca",
+            "descripcion": "Siempre las robo con amor, su blanco inmaculado y su corazón amarillo son irresistibles."
+        },
+        {
+            "nombre": "Orquídea Cattleya",
+            "descripcion": "Una joya exótica que adorna y le da un toque sofisticado a la naturaleza, es un tesoro que me maravilló encontrar."
+        },
+        {
+            "nombre": "Plumeria rosa caribeña",
+            "descripcion": "Un rosa suave que evoca calidez, está plumeria rosa es un pequeñito pedazo de paraíso que siempre me alegro de ver en los jardines."
+        },
+        {
+            "nombre": "Tulipán Bicolor: anhelo de primavera",
+            "descripcion": "Tal como un capullo elegante con rubor rosado en los bordes, una promesa de belleza que aún no he tenido el placer de ver en persona. El tulipán siempre será la flor que viva en mi imaginación y en los anhelos de mis futuro jardines."
+        }
+    ]
+
+    console.log(data);
+
+    const $ = element => document.getElementById(element);
+
+    for (let i = 1; i <= 16; i++) {
+        $('cards').innerHTML += `
+            <article class="card max-w-2xl">
+                <img class="rounded-2xl mb-2" src="./assets/img/flor (${i}).jpeg" alt="">
+                <h3 class="mb-2 font-bold text-2xl">Zinnia Elegans</h3>
+                <p class="text-normal">La Zinnia es la explosión propia de colores radiantes, es como un círculo vibrante de pétalos que siempre me atrae.</p>
+            </article>
+        `;
+    }
+</script>
+</html>
