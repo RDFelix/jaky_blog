@@ -217,6 +217,9 @@
   .h-\[70px\] {
     height: 70px;
   }
+  .h-\[75px\] {
+    height: 75px;
+  }
   .h-\[90px\] {
     height: 90px;
   }
@@ -225,6 +228,9 @@
   }
   .h-\[150px\] {
     height: 150px;
+  }
+  .h-\[750px\] {
+    height: 750px;
   }
   .h-\[auto\] {
     height: auto;
@@ -255,6 +261,9 @@
   }
   .w-\[70px\] {
     width: 70px;
+  }
+  .w-\[75px\] {
+    width: 75px;
   }
   .w-\[90px\] {
     width: 90px;
@@ -360,6 +369,18 @@
   }
   .py-14 {
     padding-block: calc(var(--spacing) * 14);
+  }
+  .pt-10 {
+    padding-top: calc(var(--spacing) * 10);
+  }
+  .pt-16 {
+    padding-top: calc(var(--spacing) * 16);
+  }
+  .pt-20 {
+    padding-top: calc(var(--spacing) * 20);
+  }
+  .pt-24 {
+    padding-top: calc(var(--spacing) * 24);
   }
   .text-2xl {
     font-size: var(--text-2xl);
