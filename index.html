@@ -80,6 +80,16 @@
         background-position: top;
     }
 
+    @media only screen and (max-width: 600px) {
+        .patron {
+            background-color: aquamarine;
+            background-image: radial-gradient(circle at bottom center, aquamarine 30px, white 30px);
+            background-repeat: repeat-x;
+            background-size: 60px 30px;
+            background-position: top;
+        }
+    }
+
     .carrousel{
         display: flex;
 
@@ -275,13 +285,13 @@
 </style>
 <body class="m-0">
     <header class="mb-10 w-full">
-        <nav class="flex items-center w-100 md:px-20 py-5">
+        <nav class="md:flex items-center w-100 md:px-20 py-5">
             <div class="flex justify-between items-center">
                 <img class="w-[50px] h-[50px]" src="./assets/img/logo.png" alt="">
-                <h1 class="text-normal md:text-2xl">Jaky Blog</h1> 
+                <h1 class="text-lg md:text-2xl font-bold">Jaky Blog</h1> 
             </div>
             
-            <ul class="hidden md:flex md:justify-around">
+            <ul class="flex justify-around">
                 <li>Sobre mi</li>
                 <li>Mis flores</li>
                 <li>Contacto</li>
