@@ -213,6 +213,12 @@
   .h-\[50px\] {
     height: 50px;
   }
+  .h-\[90px\] {
+    height: 90px;
+  }
+  .h-\[150px\] {
+    height: 150px;
+  }
   .h-auto {
     height: auto;
   }
@@ -224,6 +230,12 @@
   }
   .w-\[70\%\] {
     width: 70%;
+  }
+  .w-\[90px\] {
+    width: 90px;
+  }
+  .w-\[150px\] {
+    width: 150px;
   }
   .max-w-2xl {
     max-width: var(--container-2xl);
